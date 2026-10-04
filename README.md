@@ -58,9 +58,9 @@ Build automation remains the backbone of modern Software Engineering and DevOps.
 
 ## 🔓 Open-Source GitHub Projects
 
-Build automation features one of the most mature open-source ecosystems in software engineering. Below is a curated list of leading open-source build engines, task runners, and monorepo build orchestrators, sorted descending by **GitHub Stars_Count**.
+Build automation features one of the most mature open-source ecosystems in software engineering. Below is a curated list of leading open-source build engines, task runners, and monorepo build orchestrators, sorted descending by **GitHub_Stars_Count**.
 
-| Rank | Tool 🛠️ | GitHub Stars_Count Badge ⭐ | License 📜 | Key Features &amp; Best For 🎯 |
+| Rank | Tool 🛠️ | GitHub_Stars_Count Badge ⭐ | License 📜 | Key Features &amp; Best For 🎯 |
 |:---:|---|:---:|:---:|---|
 | 1 | **[Just](https://github.com/casey/just)** | [![GitHub_Stars](https://img.shields.io/github/stars/casey/just?style=social&color=white)](https://github.com/casey/just/stargazers) | `CC0-1.0` | Handy command runner for project-specific commands without Makefile complexity. *Best for modern task running.* |
 | 2 | **[Bazel](https://github.com/bazelbuild/bazel)** | [![GitHub_Stars](https://img.shields.io/github/stars/bazelbuild/bazel?style=social&color=white)](https://github.com/bazelbuild/bazel/stargazers) | `Apache-2.0` | Google's hermetic, reproducible monorepo build system with remote caching &amp; execution. *Best for multi-language monorepos.* |
