@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.07)" />
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Embedded CSS Animations -->
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.05); }
+      }
+      @keyframes flowData {
+        0% { stroke-dashoffset: 200; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes floatNode {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes spinBadge {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .animated-bg-glow {
+        animation: pulseGlow 6s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .pipeline-line {
+        stroke-dasharray: 12, 12;
+        animation: flowData 4s linear infinite;
+      }
+      .floating-node-1 {
+        animation: floatNode 4s ease-in-out infinite;
+      }
+      .floating-node-2 {
+        animation: floatNode 5s ease-in-out infinite 1s;
+      }
+      .floating-node-3 {
+        animation: floatNode 4.5s ease-in-out infinite 2s;
+      }
+      .title-text {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 44px;
+        fill: #ffffff;
+        letter-spacing: -0.5px;
+      }
+      .subtitle-text {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        fill: #94a3b8;
+      }
+      .pill-text {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        fill: #e2e8f0;
+      }
+    </style>
+  </defs>
+
+  <!-- Base Canvas Background -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGradient)" />
+
+  <!-- Grid Tech Lines Background Pattern -->
+  <g opacity="0.12" stroke="#6366f1" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+
+    <line x1="150" y1="0" x2="150" y2="360" />
+    <line x1="300" y1="0" x2="300" y2="360" />
+    <line x1="450" y1="0" x2="450" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="750" y1="0" x2="750" y2="360" />
+    <line x1="900" y1="0" x2="900" y2="360" />
+    <line x1="1050" y1="0" x2="1050" y2="360" />
+  </g>
+
+  <!-- Dynamic Glowing Orbs in Background (Non-blocking) -->
+  <circle class="animated-bg-glow" cx="980" cy="100" r="180" fill="url(#primaryGlow)" opacity="0.25" filter="url(#glow)" />
+  <circle class="animated-bg-glow" cx="150" cy="280" r="140" fill="url(#accentCyan)" opacity="0.2" filter="url(#glow)" />
+
+  <!-- Animated Pipeline Connectivity Lines (Background Layer) -->
+  <g opacity="0.4">
+    <path class="pipeline-line" d="M 720 120 L 880 120 L 980 200 L 1100 200" stroke="url(#primaryGlow)" stroke-width="3" fill="none" />
+    <path class="pipeline-line" d="M 750 250 L 890 250 L 960 170 L 1080 170" stroke="url(#accentCyan)" stroke-width="3" fill="none" />
+  </g>
+
+  <!-- Decorative Animated Flow Cards/Nodes (Positioned Right - Away from Main Foreground Text) -->
+  <g class="floating-node-1">
+    <rect x="880" y="80" width="130" height="50" rx="10" fill="url(#cardGrad)" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5" />
+    <circle cx="905" cy="105" r="10" fill="#a855f7" filter="url(#softGlow)" />
+    <text x="925" y="110" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f3e8ff">BUILD</text>
+  </g>
+
+  <g class="floating-node-2">
+    <rect x="1000" y="160" width="130" height="50" rx="10" fill="url(#cardGrad)" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5" />
+    <circle cx="1025" cy="185" r="10" fill="#06b6d4" filter="url(#softGlow)" />
+    <text x="1045" y="190" font-family="sans-serif" font-size="13" font-weight="bold" fill="#cffaff">CACHE</text>
+  </g>
+
+  <g class="floating-node-3">
+    <rect x="850" y="220" width="140" height="50" rx="10" fill="url(#cardGrad)" stroke="rgba(236, 72, 153, 0.4)" stroke-width="1.5" />
+    <circle cx="875" cy="245" r="10" fill="#ec4899" filter="url(#softGlow)" />
+    <text x="895" y="250" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fce7f3">MONOREPO</text>
+  </g>
+
+  <!-- Main FOREGROUND Section (Guaranteed clear & legible in front) -->
+  <g transform="translate(60, 0)">
+    <!-- Top Pill Badge -->
+    <g transform="translate(0, 50)">
+      <rect x="0" y="0" width="230" height="32" rx="16" fill="rgba(99, 102, 241, 0.2)" stroke="#6366f1" stroke-width="1" />
+      <circle cx="16" cy="16" r="5" fill="#10b981" filter="url(#softGlow)" />
+      <text x="30" y="21" class="pill-text">⚡ AWESOME DEVOPS LIST</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="142" class="title-text">Awesome Build Automation</text>
+    <text x="0" y="192" class="title-text" fill="url(#primaryGlow)">&amp; Orchestration Tools</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="238" class="subtitle-text">Curated guide to SaaS build platforms, open-source build engines,</text>
+    <text x="0" y="262" class="subtitle-text">task runners, monorepo build orchestrators, and caching tools.</text>
+
+    <!-- Interactive / Visual Category Tags -->
+    <g transform="translate(0, 290)">
+      <rect x="0" y="0" width="110" height="26" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+      <text x="55" y="17" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8">🔨 Build Engines</text>
+
+      <rect x="120" y="0" width="115" height="26" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+      <text x="177" y="17" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8">☁️ SaaS Platforms</text>
+
+      <rect x="245" y="0" width="110" height="26" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+      <text x="300" y="17" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8">📦 Monorepos</text>
+
+      <rect x="365" y="0" width="110" height="26" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+      <text x="420" y="17" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8">⚡ Task Runners</text>
+    </g>
+  </g>
+</svg>
